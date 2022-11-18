@@ -1,25 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import Nav from './components/nav/Nav';
+import Header from './components/header/Header';
+import Content from './components/content/Content';
+import axios from 'axios';
 
-function App() {
+axios.defaults.baseURL = 'https://api.themoviedb.org/3';
+axios.defaults.params = {
+  api_key : 'd8a34a8d227acb223337274a5961e673',
+};
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Nav />
+      <Header />
+      <Content />
     </div>
   );
-}
+};
 
 export default App;
